@@ -1,0 +1,15 @@
+//+------------------------------------------------------------------+
+//| Expert initialization function                                   |
+//+------------------------------------------------------------------+
+int OnInit()
+  {
+   // Button to open the pop-up window
+   if (!CreateButton("EMA Settings", 0, 10, 10, 100, 30))
+     {
+      Print("Failed to create button");
+      return INIT_FAILED;
+     }
+
+   return INIT_SUCCEEDED;
+  }
+
