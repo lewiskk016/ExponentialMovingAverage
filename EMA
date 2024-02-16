@@ -1,3 +1,15 @@
+color clrButtonFace = clrWhite; // Replace clrWhite with the desired RGB value
+color clrBlack = clrBlack; // Replace clrBlack with the desired RGB value
+color clrAliceBlue = clrAliceBlue; // Replace clrAliceBlue with the desired RGB value
+color clrNavy = clrNavy; // Replace clrNavy with the desired RGB value
+
+//+------------------------------------------------------------------+
+#property strict
+
+input int emaLength = 14; // Default EMA length
+
+int popup_id;
+
 //+------------------------------------------------------------------+
 //| Expert initialization function                                   |
 //+------------------------------------------------------------------+
@@ -12,4 +24,13 @@ int OnInit()
 
    return INIT_SUCCEEDED;
   }
-
+//+------------------------------------------------------------------+
+//| Expert deinitialization function                                 |
+//+------------------------------------------------------------------+
+void OnDeinit(const int reason)
+  {
+   // Remove the pop-up window when the indicator is removed
+   ObjectDelete(popup_id);
+  }
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
