@@ -1,6 +1,8 @@
 
 //+------------------------------------------------------------------+
-//|                                                      EMA.mq5     |
+//
+#include <Controls\ControlsColors.mqh>
+#include <Controls\Controls.mqh>
 
 
 color clrButtonFace = clrWhite; // Replace clrWhite with the desired RGB value
@@ -149,3 +151,71 @@ if (!ObjectSetInteger(0, "position_x", x))
       return false;
      }
 
+if (!ObjectSetInteger(0, "text_alignment", TA_CENTER))
+     {
+      Print("Failed to set button text alignment");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "selectable", false))
+     {
+      Print("Failed to set button selectable property");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "deselectable", false))
+     {
+      Print("Failed to set button deselectable property");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "visible", true))
+     {
+      Print("Failed to set button visibility");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "tooltip", 0))
+     {
+      Print("Failed to set button tooltip");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "zlevel", 0))
+     {
+      Print("Failed to set button z-level");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "zorder", 0))
+     {
+      Print("Failed to set button z-order");
+      return false;
+     }
+
+if (!ObjectSetInteger(0, "corner", 0))
+     {
+      Print("Failed to set button corner");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "background_color", clrAliceBlue))
+     {
+      Print("Failed to set button background color");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "border_color", clrNavy))
+     {
+      Print("Failed to set button border color");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "background_type", OBJ_FILL_SOLID))
+     {
+      Print("Failed to set button background type");
+      return false;
+     }
+
+   return true;
+  }
