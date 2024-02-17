@@ -1,4 +1,11 @@
+
+//+------------------------------------------------------------------+
+//|                                                      EMA.mq5     |
+
+
 color clrButtonFace = clrWhite; // Replace clrWhite with the desired RGB value
+color clrButtonShadow = clrButtonShadow; // Replace clrButtonShadow with the desired RGB value
+color clrButtonHighlight = clrButtonHighlight; // Replace clrButtonHighlight with the desired RGB value
 color clrBlack = clrBlack; // Replace clrBlack with the desired RGB value
 color clrAliceBlue = clrAliceBlue; // Replace clrAliceBlue with the desired RGB value
 color clrNavy = clrNavy; // Replace clrNavy with the desired RGB value
@@ -34,3 +41,25 @@ void OnDeinit(const int reason)
   }
 //+------------------------------------------------------------------+
 //| Expert tick function                                             |
+
+
+//+------------------------------------------------------------------+
+//| Expert tick function                                             |
+//+------------------------------------------------------------------+
+void OnTick()
+  {
+   // Calculate EMA based on the adjusted length
+   double ema = iMA(NULL, 0, emaLength, 0, MODE_EMA, PRICE_CLOSE, 0);
+
+   // Output EMA value
+   Print("EMA: ",ema);
+  }
+
+
+
+  //+------------------------------------------------------------------+
+//| Custom function to create a button                                |
+//+------------------------------------------------------------------+
+bool CreateButton(string text, int x, int y, int width, int height)
+  {
+   int button_id = ObjectsCreate(0, OBJ_BUTTON, 0, 0, 0);
