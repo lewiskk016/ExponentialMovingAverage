@@ -63,3 +63,21 @@ void OnTick()
 bool CreateButton(string text, int x, int y, int width, int height)
   {
    int button_id = ObjectsCreate(0, OBJ_BUTTON, 0, 0, 0);
+
+if (button_id == -1)
+     {
+      Print("Failed to create button object");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "button_mode", OBJPROP_CORNER))
+     {
+      Print("Failed to set button corner mode");
+      return false;
+     }
+
+   if (!ObjectSetString(0, "text", text))
+     {
+      Print("Failed to set button text");
+      return false;
+     }
