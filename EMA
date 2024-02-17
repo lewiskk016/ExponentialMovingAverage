@@ -81,3 +81,36 @@ if (button_id == -1)
       Print("Failed to set button text");
       return false;
      }
+
+
+if (!ObjectSetInteger(0, "position_x", x))
+     {
+      Print("Failed to set button X position");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "position_y", y))
+     {
+      Print("Failed to set button Y position");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "width", width))
+     {
+      Print("Failed to set button width");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "height", height))
+     {
+      Print("Failed to set button height");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "background_type", OBJ_FILL_SOLID))
+     {
+      Print("Failed to set button background type");
+      return false;
+     }
+
+     
