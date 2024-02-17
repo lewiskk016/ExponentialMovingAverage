@@ -113,4 +113,39 @@ if (!ObjectSetInteger(0, "position_x", x))
       return false;
      }
 
-     
+     if (!ObjectSetInteger(0, "background_color", clrButtonFace))
+     {
+      Print("Failed to set button background color");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "border_type", OBJ_BORDER_FLAT))
+     {
+      Print("Failed to set button border type");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "border_color", clrBlack))
+     {
+      Print("Failed to set button border color");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "text_color", clrBlack))
+     {
+      Print("Failed to set button text color");
+      return false;
+     }
+
+   if (!ObjectSetInteger(0, "font_size", 10))
+     {
+      Print("Failed to set button font size");
+      return false;
+     }
+
+   if (!ObjectSetString(0, "font_face", "Arial"))
+     {
+      Print("Failed to set button font face");
+      return false;
+     }
+
